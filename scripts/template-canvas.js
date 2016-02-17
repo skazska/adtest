@@ -3,15 +3,20 @@
  */
 'use strict';
 
-angular.module('template')
-    .angular.component('templateCanvas', {
-        controller: function(){
 
-        },
-        templateUrl: 'templates/template-canvas.html',
-        bindings: {
-            template: '=',
-            current­element­id: '='
-        }
+function templateCanvasFactory(draggable){
+  return {
+    restrict: 'E',
+    scope: {
+      template: '=',
+      currentElementId: '='
+    },
+    link: function(scope, element, attrs){
 
-    });
+    },
+    templateUrl: "templates/template-canvas.html"
+  }
+}
+
+angular.module('template',['drag'])
+    .angular.directive('templateCanvas', [ 'draggable', templateCanvasFactory ]);
