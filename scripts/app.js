@@ -2,7 +2,7 @@
  * Created by ska on 2/21/16.
  */
 
-angular.module('app', ['templateCanvas', 'dynaRect', 'editable'])
+angular.module('app', ['templateCanvas', 'editable'])
     .controller('TestController', ['$scope', testController]);
 
 function testController($scope){
