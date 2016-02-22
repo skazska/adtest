@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles/layout.css">
 </head>
-<body>
+<body ng-app="app" ng-controller="TestController">
 
+    <div ng-repeat="elt in template.elements">
+        <span ng-model="elt.text" contenteditable></span> x:<span ng-model="elt.x" contenteditable></span>, y:<span ng-model="elt.y" contenteditable></span>
+    </div>
+
+    <template-canvas template="template" current-element-id="props.eltId"></template-canvas>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js"></script>
-    <script src="scripts/draggable.js"></script>
+    <script src="scripts/editable.js"></script>
+    <script src="scripts/dynaRect.js"></script>
     <script src="scripts/template-canvas.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

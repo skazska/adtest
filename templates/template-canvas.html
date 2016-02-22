@@ -1,1 +1,9 @@
-<div width=""
+<dyna-rect ng-repeat="elt in template.elements" dr-left="elt.x" dr-top="elt.y" dr-height="elt.height" dr-width="elt.width">
+    <div class="lac-outer">
+        <div class="lac-middle">
+
+            <div ng-model="elt.text" contenteditable class="lc-text"></div>
+
+        </div>
+    </div>
+</dyna-rect>
